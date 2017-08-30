@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.y.reminder.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <!---<TextView android:text="Add A Reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvReminder"
+        android:layout_margin="2dp"/> -->
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:maxLength="30"
+            android:layout_weight="7"
+            android:id="@+id/etReminder"
+            android:hint="@string/hint_reminder" />
+            <!--android:textAppearance="?android:attr/textAppearanceLarge" /> -->
+    </android.support.design.widget.TextInputLayout>
+
+    <TimePicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="21"
+        android:id="@+id/timePicker"/>
+
+    <RelativeLayout
+        android:layout_weight="10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Turn Alarm ON"
+            android:id="@+id/bOn"
+            android:clickable="true"
+            android:layout_alignTop="@+id/bOff"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Reminder"
+            android:id="@+id/bOff"
+            android:clickable="true"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_weight="2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text=""
+        android:id="@+id/updateText"
+        android:layout_gravity="center"/>
+</LinearLayout>
